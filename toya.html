@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Favorite Person ❤️</title>
+    <style>
+        /* CSS Reset & Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe5ec, #ffb3c6);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Rose Petals & Floating Hearts Animation */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff4d6d;
+            font-size: 20px;
+            animation: floatUp 6s linear infinite;
+            opacity: 0.7;
+            bottom: -20px;
+            z-index: 0;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px; /* 4ta card bhalo bhabe dhorar jonno width barano holo */
+            text-align: center;
+            z-index: 10;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #ff0a54;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: heartbeat 1.5s infinite alternate;
+        }
+
+        @keyframes heartbeat {
+            to { transform: scale(1.05); }
+        }
+
+        .love-message {
+            font-size: 1.2rem;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Music Player Box */
+        .music-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .music-btn {
+            background: #ff4d6d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .music-btn:hover {
+            background: #ff0a54;
+            transform: scale(1.05);
+        }
+
+        /* Image Gallery - FIXED Alignment */
+        .gallery-title {
+            color: #ff4d6d;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Phone-e nile automatic bhenge niche jabe */
+            gap: 25px;
+            padding: 10px;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 12px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: rotate(var(--r));
+            transition: 0.4s ease;
+            cursor: pointer;
+            width: 260px; /* Shob card er unique static alignment size */
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.08);
+            z-index: 20;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 320px; /* Chhobir height match korar jonno setup */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .caption {
+            margin-top: 12px;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="bg-music" src="song.mp3" loop></audio>
+
+    <div class="container">
+        <h1>To My Beautiful Girl ❤️</h1>
+        <p class="love-message">"You make my world a whole lot brighter just by being in it."</p>
+
+        <div class="music-box">
+            <span>🎵  Special Song:</span>
+            <button class="music-btn" id="play-btn" onclick="toggleMusic()">Play Music</button>
+        </div>
+
+        <h2 class="gallery-title">Only For You Toya❤️✨</h2>
+        
+        <div class="gallery">
+            <div class="photo-card" style="--r: -3deg;">
+                <img src="photo1.jpeg" alt="Memory 1">
+                <div class="caption">লাল শাড়ী আর হাতে আলতা—তুমি যেন কোনো কবির কবিতার নিখুঁত বাস্তব রূপ। ❤️ 😍</div>
+            </div>
+            
+            <div class="photo-card" style="--r: 2deg;">
+                <img src="photo2.jpeg" alt="Memory 2">
+                <div class="caption">তোমার এই স্নিগ্ধ চাহনি আর মিষ্টি হাসির সামনে আকাশের চাঁদও যেন ফিকে পড়ে যায়। ✨</div>
+            </div>
+
+            <div class="photo-card" style="--r: -1deg;">
+                <img src="photo3.jpeg" alt="Memory 3">
+                <div class="caption">প্রকৃতির সব সবুজ একদিকে, আর তোমার এই মায়াবী রূপ একদিকে। রূপকথার রাজকুমারীও হার মানবে। 🌿</div>
+            </div>
+
+            <div class="photo-card" style="--r: 4deg;">
+                <img src="photo4.jpeg" alt="Memory 4">
+                <div class="caption">শালীনতার মাঝেও যে এতো সৌন্দর্য লুকিয়ে থাকতে পারে, তা তোমাকে না দেখলে কেউ বিশ্বাস করবে না। মায়ায় জড়ানো চারপাশ! 🌸 🌹</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const btn = document.getElementById('play-btn');
+        let isFirstPlay = true; 
+
+        // Music Logic
+        function toggleMusic() {
+            if (music.paused) {
+                if (isFirstPlay) {
+                    music.currentTime = 45; // 45 second theke start
+                    isFirstPlay = false; 
+                }
+                music.play();
+                btn.innerText = "Pause Music";
+                btn.style.background = "#6c757d";
+            } else {
+                music.pause();
+                btn.innerText = "Play Music";
+                btn.style.background = "#ff4d6d";
+            }
+        }
+
+        // Floating Hearts & Rose Petals
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('heart');
+            
+            const items = ['❤️', '🌹', '🌸'];
+            petal.innerHTML = items[Math.floor(Math.random() * items.length)];
+            
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 4 + 's';
+            petal.style.fontSize = Math.random() * 20 + 15 + 'px';
+            
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 7000);
+        }
+
+        setInterval(createPetal, 300);
+    </script>
+</body>
+</html>
